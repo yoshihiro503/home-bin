@@ -1,0 +1,1 @@
+sudo powermetrics | grep -e "CPU die temperature"
