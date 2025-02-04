@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eux
+date
+STDERR="$HOME/bin/owari_stderr.log"
+if time $@ 2> $STDERR; then
+   cat $STDERR 1>&2
+   say "owarimashita"
+else
+   cat $STDERR 1>&2
+   say -v Samantha "failed"
+   say -i -v Samantha -f $STDERR
+fi
+rm $STDERR

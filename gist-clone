@@ -1,0 +1,4 @@
+#!/bin/sh
+set -ex
+git clone git@gist.github.com:$1.git $2
+
