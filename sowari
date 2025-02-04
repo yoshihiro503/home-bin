@@ -1,0 +1,8 @@
+#!/bin/sh
+set -ux
+DIR=$(pwd `dirname .`)
+if "$@"; then
+  slack_notif "Success $DIR: $@"
+else
+  slack_notif "Error $DIR:   $@"
+fi
