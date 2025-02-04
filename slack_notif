@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ux
 Slack_Webhook_URL=https://hooks.slack.com/services/XXX/YYY/ZZZZZZZ
+ComputerName=$(scutil --get ComputerName)
 [ $# -ne 0 ] && MESSAGE=[$@] || MESSAGE="(slack_notif)"
-curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"from Hilbert: '$MESSAGE'\"}" $Slack_Webhook_URL
+curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"from $ComputerName: '$MESSAGE'\"}" $Slack_Webhook_URL
